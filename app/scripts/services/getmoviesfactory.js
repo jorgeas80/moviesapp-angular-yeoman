@@ -26,7 +26,7 @@ angular.module('pelitweetsAngularYeomanApp')
        *
        */
       $http
-        .get(urlMovies)
+        .get(urlMovies, {cache: true})
         .then(
           function success(result) {
             f.movies = result.data;

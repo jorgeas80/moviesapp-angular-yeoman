@@ -13,11 +13,31 @@
     <table ng-hide="main.error" class="table table-responsive table-hover table-striped table-condensed table-bordered">
       <thead>
       <tr>
-        <th ng-click="main.setOrder('movie_title')">Título</th>
-        <th ng-click="main.setOrder(main.runtimeNumber)">Duración</th>
-        <th ng-click="main.setOrder('movie_release_date')">Fecha de estreno</th>
-        <th ng-click="main.setOrder('movie_rating_imdb')">Nota IMDB</th>
-        <th ng-click="main.setOrder('movie_rating_fa')">Nota Filmaffinity</th>
+        <th ng-click="main.setOrder('movie_title')">
+          Título
+          <span ng-show="main.orderBy == 'movie_title' && !main.reverse" class="glyphicon glyphicon-chevron-up"></span>
+          <span ng-show="main.orderBy == 'movie_title' && main.reverse" class="glyphicon glyphicon-chevron-down"></span>
+        </th>
+        <th ng-click="main.setOrder(main.runtimeNumber)">
+          Duración
+          <span ng-show="main.orderBy == runtimeJustNumber && !main.reverse" class="glyphicon glyphicon-chevron-up"></span>
+          <span ng-show="main.orderBy == runtimeJustNumber && main.reverse" class="glyphicon glyphicon-chevron-down"></span>
+        </th>
+        <th ng-click="main.setOrder('movie_release_date')">
+          Fecha de estreno
+          <span ng-show="main.orderBy == 'movie_release_date' && !main.reverse" class="glyphicon glyphicon-chevron-up"></span>
+          <span ng-show="main.orderBy == 'movie_release_date' && main.reverse" class="glyphicon glyphicon-chevron-down"></span>
+        </th>
+        <th ng-click="main.setOrder('movie_rating_imdb')">
+          Nota IMDB
+          <span ng-show="main.orderBy == 'movie_rating_imdb' && !main.reverse" class="glyphicon glyphicon-chevron-up"></span>
+          <span ng-show="main.orderBy == 'movie_rating_imdb' && main.reverse" class="glyphicon glyphicon-chevron-down"></span>
+        </th>
+        <th ng-click="main.setOrder('movie_rating_fa')">
+          Nota Filmaffinity
+          <span ng-show="main.orderBy == 'movie_rating_fa' && !main.reverse" class="glyphicon glyphicon-chevron-up"></span>
+          <span ng-show="main.orderBy == 'movie_rating_fa' && main.reverse" class="glyphicon glyphicon-chevron-down"></span>
+        </th>
         <th>Detalles</th>
       </tr>
       </thead>

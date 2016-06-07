@@ -50,7 +50,7 @@
       <tr ng-repeat="movie in main.movies | filter: main.filterText | orderBy: main.orderBy : main.reverse">
         <td>{{ movie.movie_title}}</td>
         <td>{{ movie.movie_runtime }}</td>
-        <td>{{ movie.movie_release_date }}</td>
+        <td>{{ movie.movie_release_date | date: 'dd MMM yyyy' }}</td>
         <td>{{ movie.movie_rating_imdb }}</td>
         <td>{{ movie.movie_rating_fa }}</td>
         <td ng-switch="movie.movie_id_normalized">

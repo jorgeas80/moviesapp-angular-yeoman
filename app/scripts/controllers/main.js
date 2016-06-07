@@ -23,7 +23,7 @@ angular.module('pelitweetsAngularYeomanApp')
 
     // This method changes the order of the table's data
     vm.setOrder = function(order) {
-      if (order !== vm.orderBy) {
+      if (order === vm.orderBy) {
         vm.reverse = !vm.reverse;
       }
 

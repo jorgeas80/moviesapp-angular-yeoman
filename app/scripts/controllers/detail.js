@@ -8,7 +8,7 @@
  * Controller of the pelitweetsAngularYeomanApp
  */
 angular.module('pelitweetsAngularYeomanApp')
-  .controller('DetailCtrl', function ($routeParams, getMoviesFactory) {
+  .controller('DetailCtrl', function ($rootScope, $routeParams, getMoviesFactory) {
 
       /**
        * this.movie will hold the result of a $resource(...).get() call. So, there will be 2 phases:
@@ -22,4 +22,7 @@ angular.module('pelitweetsAngularYeomanApp')
        * as a plain json object when needed
        **/
     this.movie = getMoviesFactory.getMovieDetail($routeParams.id);
+
+    // Send the message to hide the search form
+    $rootScope.$emit('NavCtrl:showInput', false);
   });

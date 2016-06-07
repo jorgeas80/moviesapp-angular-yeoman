@@ -21,4 +21,9 @@ angular.module('pelitweetsAngularYeomanApp')
       $rootScope.$emit('NavCtrl:filterText', vm.filterText);
     });
 
+    // Receive the message to show/hide the input
+    $rootScope.$on('NavCtrl:showInput', function(event, data) {
+      vm.showInput = data;
+    });
+
   });

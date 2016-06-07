@@ -1,0 +1,44 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Listado de películas</h3>
+  </div>
+
+  <div class="panel-body">
+
+
+    <div class="alert alert-danger" ng-show="main.error">
+      Error cargando lista de peliculas
+    </div>
+
+    <table ng-hide="main.error" class="table table-responsive table-hover table-striped table-condensed table-bordered">
+      <thead>
+      <tr>
+        <th ng-click="main.setOrder('movie_title')">Título</th>
+        <th ng-click="main.setOrder(main.runtimeNumber)">Duración</th>
+        <th ng-click="main.setOrder('movie_release_date')">Fecha de estreno</th>
+        <th ng-click="main.setOrder('movie_rating_imdb')">Nota IMDB</th>
+        <th ng-click="main.setOrder('movie_rating_fa')">Nota Filmaffinity</th>
+        <th>Detalles</th>
+      </tr>
+      </thead>
+
+      <tbody>
+      <tr>
+        <td colspan=6 ng-show="main.movies.length == 0">Cargando peliculas...</td>
+      </tr>
+
+      <tr ng-repeat="movie in main.movies | filter: main.filterText | orderBy: main.orderBy : main.reverse">
+        <td>{{ movie.movie_title}}</td>
+        <td>{{ movie.movie_runtime }}</td>
+        <td>{{ movie.movie_release_date | date: 'dd MMM yyyy' }}</td>
+        <td>{{ movie.movie_rating_imdb }}</td>
+        <td>{{ movie.movie_rating_fa }}</td>
+        <td><a href="#">Detalles</a></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+

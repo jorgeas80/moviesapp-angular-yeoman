@@ -23,8 +23,8 @@ angular
       })
       .when('/detail/:id', {
         templateUrl: 'views/detail.html',
-        controller: 'DetailCtrl',
-        controllerAs: 'detail'
+        //controller: 'DetailCtrl',
+        //controllerAs: 'detail'
       })
       .otherwise({
         redirectTo: '/'
